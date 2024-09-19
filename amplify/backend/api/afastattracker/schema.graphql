@@ -1,0 +1,147 @@
+type LeagueLeaders @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  passingYards: Int
+  passingTDs: Int
+  completions: Int
+  passingAttempts: Int
+  qbInts: Int
+  mostSacked: Int
+  rushingYards: Int
+  rushingTDs: Int
+  rushingAvg: Int
+  yardsAFH: Int
+  rushingFumbles: Int
+  catches: Int
+  recYards: Int
+  recTDs: Int
+  yardsAfterCatch: Int
+  drops: Int
+  pancakes: Int
+  mostSacksAllowed: Int
+  tackles: Int
+  defTDs: Int
+  tfls: Int
+  forcedFumbles: Int
+  sacks: Int
+  passDeflections: Int
+  ints: Int
+  catchAllowed: Int
+}
+
+type YearResults @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  americanBowlChamp: String
+  americanBowlRunnerUp: String
+  Awards: Awards @hasOne
+  LeagueLeaders: LeagueLeaders @hasOne
+}
+
+type Awards @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  OPOY: String
+  DPOY: String
+  ROTY: String
+  GOTY: String
+  americanBowlMVP: String
+  CBPOTY: String
+  SGAward: String
+}
+
+type ReceivingStat @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  rec: Int
+  yds: Int
+  avg: Float
+  long: Int
+  td: Int
+  drops: Int
+  yac: Int
+}
+
+type DefensiveStat @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  tackles: Int
+  tfl: Int
+  sacks: Int
+  ff: Int
+  td: Int
+  int: Int
+  pass_deflection: Int
+  catch_allowed: Int
+  deflection_rate: Float
+}
+
+type BlockingStat @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  pancakes: Int
+  sacks_allowed: Int
+}
+
+type RushingStat @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  att: Int
+  yds: Int
+  td: Int
+  avg: Float
+  fumb: Int
+  btk: Int
+  afh: Int
+  twty_plus: Int
+  long: Int
+}
+
+type PassingStat @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  cmp: Int
+  att: Int
+  yds: Int
+  pct: Float
+  ypa: Float
+  sack: Int
+  td: Int
+  int: Int
+  long: Int
+  rating: Float
+}
+
+type Player @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  fName: String
+  lName: String
+  age: Int
+  speed: Int
+  acceleration: Int
+  strength: Int
+  awareness: Int
+  agility: Int
+  catch: Int
+  carry: Int
+  jump: Int
+  breakTackle: Int
+  tackle: Int
+  throwPower: Int
+  throwAcc: Int
+  passBlock: Int
+  runBlock: Int
+  kickPower: Int
+  kickAcc: Int
+  importance: Int
+  stamina: Int
+  kickReturn: Int
+  injury: Int
+  toughness: Int
+  ego: Int
+  position: String
+  wgt: Int
+  height: Int
+  playerTendency: String
+  roleWeapon: [String]!
+  ReceivingStat: ReceivingStat @hasOne
+  DefensiveStat: DefensiveStat @hasOne
+  BlockingStat: BlockingStat @hasOne
+  RushingStat: RushingStat @hasOne
+  PassingStat: PassingStat @hasOne
+  year: String
+  team: String
+}
+ 

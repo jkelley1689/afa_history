@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-afastattracker-staging-05516-authRole",
+      "UnauthRoleArn": "arn:aws:iam::767397903993:role/amplify-afastattracker-staging-05516-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::767397903993:role/amplify-afastattracker-staging-05516-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-afastattracker-staging-05516-deployment",
+      "UnauthRoleName": "amplify-afastattracker-staging-05516-unauthRole",
+      "StackName": "amplify-afastattracker-staging-05516",
+      "StackId": "arn:aws:cloudformation:us-east-1:767397903993:stack/amplify-afastattracker-staging-05516/5b4919b0-e0d4-11ee-9f46-1279c94681db",
+      "AmplifyAppId": "dzro88vmfwibb"
+    },
+    "categories": {
+      "api": {
+        "afastattracker": {}
+      }
+    }
+  }
+}

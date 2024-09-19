@@ -1,0 +1,45 @@
+* AwardsList.css */
+.awards {
+  background-color: #f8f8f8;
+  width: 100%;
+  display: grid;
+}
+.awards-container {
+  width: auto;
+  margin: 1rem 0 1rem 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  justify-content: space-between;
+}
+
+.awards-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.award-item {
+  grid-template-columns: auto 1fr;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.award-label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .award-value {
+    color: #0f0f0f;
+    text-align: right;
+  }
