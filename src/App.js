@@ -18,7 +18,7 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/" Component={Home} />
+          <Route path="/Home" Component={Home} />
           <Route path="/uploadStats" Component={UploadStatSheet} />
           <Route path="/Teams" Component={Teams} />
           <Route path="/Teams/:team" Component={TeamCard} />
