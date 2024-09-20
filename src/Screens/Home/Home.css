@@ -1,24 +1,24 @@
 .homeImgCarousel {
     position: relative;
-    width: 100%; /* Full width of the container */
-    max-width: 1200px; /* Optional: Limit max width */
-    height: 400px; /* Set the height for the image */
+    width: 100%;
+    max-width: 1200px; 
+    height: 400px; 
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .carouselImage {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire container */
-    transition: opacity 1s ease-in-out; /* Smooth transition between images */
+    object-fit: cover; 
+    transition: opacity 1s ease-in-out; 
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 1; /* Initially visible */
+    opacity: 1; 
 }
 
 .carouselImage.fade-out {
-    opacity: 0; /* Fade out effect */
+    opacity: 0; 
 }

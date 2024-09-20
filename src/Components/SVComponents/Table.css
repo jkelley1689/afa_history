@@ -1,6 +1,6 @@
 .table-container {
     width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-x: auto; 
     margin-top: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -10,7 +10,7 @@
   .custom-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px; /* Ensures the table doesn't shrink too much */
+    min-width: 600px; 
   }
   
   .custom-table th, .custom-table td {
@@ -43,7 +43,7 @@
     text-decoration: underline;
   }
   
-  /* Ensures the table doesn't overflow vertically */
+
   .table-container {
     max-height: 400px;
     overflow-y: auto;
