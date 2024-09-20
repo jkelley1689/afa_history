@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const SeasonNavBar = ({year}) => {
 
     const years = [2018,2019,2021,2022,2023]
-    const offensiveStats = ["Passing","Rushing","Receiving"]
+    const offensiveStats = ["Passing","Rushing","Receiving","Blocking"]
     const defensiveStats = ["Tackles", "TFLs","Sacks","Ints"]
     
   return (
@@ -16,7 +16,7 @@ const SeasonNavBar = ({year}) => {
         <Navbar.Toggle aria-controls='basic-navbar-nav'/>
         <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='mr-auto'>
-                <NavDropdown title='Year' id='offensive-stats-dropdown'>
+                <NavDropdown title='Year' id='year-stats-dropdown'>
                     {years.map(year => (
                         <NavDropdown.Item>
                             <Link to={`/Seasons/${year}`}>

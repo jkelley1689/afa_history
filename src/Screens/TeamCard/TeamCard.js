@@ -6,7 +6,7 @@ const TeamCard = () => {
     const {team} = useParams()
 
   return (
-    <div>{team}</div>
+    <div style={{paddingTop: 120}}>{team}</div>
   )
 }
 

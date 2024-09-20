@@ -109,6 +109,34 @@ const commonColumns = [
     { Header: 'Role 2', accessor: d => d.roleWeapon[1] }
   ]
 
+  const blockingColumns = [
+    ...commonColumns,
+    { Header: 'Pancakes', accessor: d => d.BlockingStat?.pancakes},
+    { Header: 'Sacks Allowed', accessor: d => d.BlockingStat?.sacks_allowed},
+    { Header: 'Age', accessor: d => d.age},
+    { Header: 'Speed', accessor: d => d.speed},
+    { Header: 'Acceleration', accessor: d => d.acceleration},
+    { Header: 'Strength', accessor: d => d.strength},
+    { Header: 'Awareness', accessor: d => d.awareness},
+    { Header: 'Agility', accessor: d => d.agility},
+    { Header: 'Catch', accessor: d => d.catch },
+    { Header: 'Carry', accessor: d => d.carry },
+    { Header: 'Jump', accessor: d => d.jump },
+    { Header: 'BrkTkl', accessor: d => d.breakTackle },
+    { Header: 'Tackle', accessor: d => d.tackle },
+    { Header: 'ThPower', accessor: d => d.throwPower },
+    { Header: 'ThAcc', accessor: d => d.throwAcc },
+    { Header: 'Stamina', accessor: d => d.stamina },
+    { Header: 'Injury', accessor: d => d.injury },
+    { Header: 'Toughness', accessor: d => d.toughness },
+    { Header: 'Ego', accessor: d => d.ego },
+    { Header: 'Wgt', accessor: d => d.wgt },
+    { Header: 'Hgt', accessor: d => d.height },
+    { Header: 'Player Type', accessor: d => d.playerTendency },
+    { Header: 'Role 1', accessor: d => d.roleWeapon[0] },
+    { Header: 'Role 2', accessor: d => d.roleWeapon[1] }
+  ]
+
 const PlayerContent = ({players, position}) => {
    let columns;
   
@@ -116,8 +144,10 @@ const PlayerContent = ({players, position}) => {
     columns = qbColumns;
   } else if (position.includes('TB')) {
     columns = rbColumns;
-  } else if (position.includes('WR') || position.includes('TE')) {
+  } else if (position.includes('WR')){
     columns = wrColumns;
+  } else if (position.includes('FB')){
+    columns = blockingColumns;
   } else {
     columns = []; // Default case
   }

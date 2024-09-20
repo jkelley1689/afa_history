@@ -11,13 +11,23 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: grid;
-  justify-content: space-between;
+  grid-template-columns: 30% 70%;
+  justify-content: center;
 }
 
 .awards-container h2 {
+  grid-column: span 2;
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+}
+
+.awards-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  align-self: top;
+  padding-left: 20px;
 }
 
 .awards-list {

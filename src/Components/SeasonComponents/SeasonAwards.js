@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './SeasonAwards.css'
+import standings from '../../Images/2022_Standings.png'
 
 const SeasonAwards = ({selectedYearResults}) => {
     console.log(selectedYearResults)
@@ -8,7 +9,7 @@ const SeasonAwards = ({selectedYearResults}) => {
     <div className='awards'>
         <div className='awards-container'>
             <h2>{selectedYearResults.season} AFA Standings and Awards</h2>
-            <div className='awards-list'></div>
+            <div className='awards-list'>
                 <div className='award-item'>
                     <span className='award-label'>American Bowl Champion: </span>
                     <span className='award-value'>{selectedYearResults.champion}</span>
@@ -53,6 +54,8 @@ const SeasonAwards = ({selectedYearResults}) => {
                     <span className='award-label'>Receiving Leader: </span>
                     <span className='award-value'>{selectedYearResults.RecLeader}</span>
                 </div>
+            </div>
+            <img src={standings} alt='none'></img>
         </div>
     </div>
   )

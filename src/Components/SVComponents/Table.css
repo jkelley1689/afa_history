@@ -1,0 +1,57 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensures the table doesn't shrink too much */
+  }
+  
+  .custom-table th, .custom-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .custom-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .custom-table td {
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+  }
+  
+  .custom-table td:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .custom-table a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .custom-table a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Ensures the table doesn't overflow vertically */
+  .table-container {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .custom-table th, .custom-table td {
+      padding: 8px;
+    }
+  }
+  

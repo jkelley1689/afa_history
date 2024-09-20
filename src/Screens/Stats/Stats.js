@@ -25,7 +25,11 @@ const {year, statType} = useParams()
     else if(statType === 'Receiving'){
       return ["WR","TE"]
     }
+    else if(statType === 'Blocking'){
+      return ['TE','FB','LG','RG','C','LT','RT']
+    }
   },[statType])
+
 
   useEffect(() => {
     setLoading(true)
@@ -35,10 +39,7 @@ const {year, statType} = useParams()
         and: [
           { year: { eq: year } },
           { or:
-            [
-              {position: { eq: position[0]}},
-              {position: { eq: position[1]}}
-            ]
+            position.map(pos => ({position: {eq: pos}}))
           }
         ]
       }
@@ -49,6 +50,7 @@ const {year, statType} = useParams()
         limit: 1000
       }
     }).then(res => {
+      console.log(res)
       let modifiedPlayers = res.data.listPlayers.items
 
       if(position.includes('QB')){
@@ -60,12 +62,12 @@ const {year, statType} = useParams()
         modifiedPlayers.sort((a,b) => b.RushingStat.yds - a.RushingStat.yds)
       }
       if(position.includes('WR')){
-        modifiedPlayers.forEach(element => {
-          if(!element.ReceivingStat)
-            console.log(`Player ${element.fName} ${element.lName} has no Rec Stat (null or undefined)`)
-        });
         modifiedPlayers = modifiedPlayers.filter((player) => player.ReceivingStat && player.ReceivingStat.rec !== 0)
         modifiedPlayers.sort((a,b) => b.ReceivingStat.yds - a.ReceivingStat.yds)
+      }
+      if(position.includes('LT')){
+        modifiedPlayers = modifiedPlayers.filter((player) => player.BlockingStat && player.BlockingStat.pancakes !== 0)
+        modifiedPlayers.sort((a,b) => b.BlockingStat.pancakes - a.BlockingStat.pancakes)
       }
       setPlayers(modifiedPlayers)
       setLoading(false)

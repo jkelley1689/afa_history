@@ -1,5 +1,5 @@
 import { generateClient } from 'aws-amplify/api'
-import { createPassingStat, createRushingStat, createPlayer, createReceivingStat, updatePlayer } from '../../graphql/mutations'
+import { createPassingStat, createRushingStat, createPlayer, createReceivingStat, updatePlayer, createBlockingStat } from '../../graphql/mutations'
 
 async function createNewPlayer(data){
 
@@ -62,6 +62,18 @@ async function createNewPlayer(data){
             if(data.hasOwnProperty('REC')){
                 createRecStats()
             }
+            if(data.hasOwnProperty('PANCAKE')){
+                createBlockingStats()
+            }
+        }
+        else if(player.position === 'FB'
+            || player.position === 'LT'
+            || player.position === 'LG'
+            || player.position === 'C'
+            || player.position === 'RG'
+            || player.position === 'RT'
+        ){
+            createBlockingStats()
         }
     }
 
@@ -163,7 +175,32 @@ async function createNewPlayer(data){
         }
 
         
-    }   
+    }
+    
+    async function createBlockingStats(){
+        let blockingStats = {
+            pancakes: data.PANCAKE,
+            sacks_allowed: data['SACKS ALLOWED']
+        }
+
+        try {
+            const blockingStatResponse = await client.graphql({
+                query: createBlockingStat,
+                variables: { input: blockingStats }
+            });
+        
+            let blockingStatID = blockingStatResponse.data.createBlockingStat.id;
+        
+            await client.graphql({
+                query: updatePlayer,
+                variables: { input: { id:playerId, playerBlockingStatId: blockingStatID } }
+            });
+            
+            console.log('Player successfully updated');
+        } catch (error) {
+            console.error('Error updating player with blocking stat ID:', error);
+        }
+    }
 
 }
 
