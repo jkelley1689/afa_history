@@ -1,16 +1,54 @@
-import React from 'react';
-import { useTable, useSortBy } from 'react-table';
+import React, { useState } from 'react';
+import { useTable, useSortBy, useFilters } from 'react-table';
 import { Link } from 'react-router-dom';
-import './Table.css'; // External CSS for further customization
+import './Table.css';
+
+const DefaultColumnFilter = ({ column: { filterValue, setFilter } }) => {
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  const handleFilterIconClick = (e) => {
+    e.stopPropagation()
+    setIsFilterOpen(!isFilterOpen);
+  };
+
+  return (
+    <div className="filter-container">
+      <button onClick={handleFilterIconClick} className="filter-icon">
+        🔍
+      </button>
+      {isFilterOpen && (
+        <input
+          value={filterValue || ''}
+          onChange={(e) => setFilter(e.target.value || undefined)}
+          placeholder={`Search...`}
+          className="filter-input"
+          onClick={(e) => {e.stopPropagation()}}
+        />
+      )}
+    </div>
+  );
+};
 
 const Table = ({ columns, data, path }) => {
+  const defaultColumn = {
+    Filter: DefaultColumnFilter,
+  };
+
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns, data }, useSortBy);
+  } = useTable(
+    {
+      columns,
+      data,
+      defaultColumn,
+    },
+    useFilters,
+    useSortBy
+  );
 
   return (
     <div className="table-container">
@@ -31,6 +69,7 @@ const Table = ({ columns, data, path }) => {
                         : ' 🔼'
                       : ''}
                   </span>
+                  <div>{column.canFilter ? column.render('Filter') : null}</div>
                 </th>
               ))}
             </tr>

@@ -22,7 +22,7 @@ const Navbar = () => {
                 </div>
                 <ul style={{listStyleType:'none'}} className={click ? "nav-menu active" : "nav-menu"}>
                     <li className='nav-item'>
-                        <Link to='/Home' onClick={closeMenu}>Home</Link>
+                        <Link to='/' onClick={closeMenu}>Home</Link>
                     </li>
                     <li className='nav-item'>
                         <Link to='/Teams' onClick={closeMenu}>Teams</Link>
