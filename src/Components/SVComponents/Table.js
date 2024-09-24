@@ -1,28 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTable, useSortBy, useFilters } from 'react-table';
 import { Link } from 'react-router-dom';
 import './Table.css';
 
 const DefaultColumnFilter = ({ column: { filterValue, setFilter } }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const filterRef = useRef();
+  const inputRef = useRef()
 
   const handleFilterIconClick = (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     setIsFilterOpen(!isFilterOpen);
   };
 
+  const handleInputChange = (e) => {
+    setFilter(e.target.value || undefined);
+  };
+
+  const handleClickOutside = (e) => {
+    if (filterRef.current && !filterRef.current.contains(e.target)) {
+      setIsFilterOpen(false); // Close the filter if clicking outside
+    }
+  };
+
+  useEffect(() => {
+    if(isFilterOpen && inputRef.current){
+      inputRef.current.focus()
+    }
+  },[isFilterOpen])
+
+  useEffect(() => {
+    // Add a global click event listener
+    document.addEventListener('click', handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="filter-container">
+    <div className="filter-container" ref={filterRef}>
       <button onClick={handleFilterIconClick} className="filter-icon">
         🔍
       </button>
       {isFilterOpen && (
         <input
+          ref={inputRef}
           value={filterValue || ''}
-          onChange={(e) => setFilter(e.target.value || undefined)}
+          onChange={handleInputChange}
           placeholder={`Search...`}
           className="filter-input"
-          onClick={(e) => {e.stopPropagation()}}
+          onClick={(e) => e.stopPropagation()} // Prevents the input click from closing itself
         />
       )}
     </div>

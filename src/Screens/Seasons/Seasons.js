@@ -12,8 +12,8 @@ const seasons = [
 ]
 
 const columns = [
-    {Header: 'Year', accessor: 'label'},
-    {Header: "AFA Bowl Result", accessor: 'result'}
+    {Header: 'Year', accessor: 'label', disableFilters: true},
+    {Header: "AFA Bowl Result", accessor: 'result', disableFilters: true}
 ]
 
 const Seasons = () => {

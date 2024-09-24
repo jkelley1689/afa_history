@@ -8,7 +8,6 @@ const SeasonNavBar = ({year}) => {
 
     const years = [2018,2019,2021,2022,2023]
     const offensiveStats = ["Passing","Rushing","Receiving","Blocking"]
-    const defensiveStats = ["Tackles", "TFLs","Sacks","Ints"]
     
   return (
     <Navbar bg='light' expand='lg'>
@@ -34,15 +33,11 @@ const SeasonNavBar = ({year}) => {
                         </NavDropdown.Item>
                     ))}
                 </NavDropdown>
-                <NavDropdown title='Defensive Stats' id='defensive-stats-dropdown'>
-                {defensiveStats.map(stat => (
-                        <NavDropdown.Item>
-                            <Link to={`${stat}`}>
-                                {stat}
-                            </Link>
-                        </NavDropdown.Item>
-                    ))}
-                </NavDropdown>
+                <Nav.Link>
+                        <Link to={`/Seasons/${year}/Defense`}>
+                            Defensive Stats
+                        </Link>
+                </Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>

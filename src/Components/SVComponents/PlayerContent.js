@@ -137,6 +137,40 @@ const qbColumns = [
     { Header: 'Role 2', accessor: d => d.roleWeapon[1], canFilter: true }
   ];
 
+  const defensiveColumns = [
+    ...commonColumns,
+    { Header: 'Tackles', accessor: d => d.DefensiveStat?.tackles, disableFilters: true },
+    { Header: 'Tfl', accessor: d => d.DefensiveStat?.tfl, disableFilters: true },
+    { Header: 'Sacks', accessor: d => d.DefensiveStat?.sacks, disableFilters: true },
+    { Header: 'FF', accessor: d => d.DefensiveStat?.ff, disableFilters: true },
+    { Header: 'TD', accessor: d => d.DefensiveStat?.td, disableFilters: true },
+    { Header: 'Int', accessor: d => d.DefensiveStat?.int, disableFilters: true },
+    { Header: 'Pass Defl', accessor: d => d.DefensiveStat?.pass_deflection, disableFilters: true },
+    { Header: 'Catch Allowed', accessor: d => d.DefensiveStat?.catch_allowed, disableFilters: true },
+    { Header: 'Age', accessor: d => d.age, disableFilters: true },
+    { Header: 'Speed', accessor: d => d.speed, disableFilters: true },
+    { Header: 'Acceleration', accessor: d => d.acceleration, disableFilters: true },
+    { Header: 'Strength', accessor: d => d.strength, disableFilters: true },
+    { Header: 'Awareness', accessor: d => d.awareness, disableFilters: true },
+    { Header: 'Agility', accessor: d => d.agility, disableFilters: true },
+    { Header: 'Catch', accessor: d => d.catch, disableFilters: true },
+    { Header: 'Carry', accessor: d => d.carry, disableFilters: true },
+    { Header: 'Jump', accessor: d => d.jump, disableFilters: true },
+    { Header: 'BrkTkl', accessor: d => d.breakTackle, disableFilters: true },
+    { Header: 'Tackle', accessor: d => d.tackle, disableFilters: true },
+    { Header: 'ThPower', accessor: d => d.throwPower, disableFilters: true },
+    { Header: 'ThAcc', accessor: d => d.throwAcc, disableFilters: true },
+    { Header: 'Stamina', accessor: d => d.stamina, disableFilters: true },
+    { Header: 'Injury', accessor: d => d.injury, disableFilters: true },
+    { Header: 'Toughness', accessor: d => d.toughness, disableFilters: true },
+    { Header: 'Ego', accessor: d => d.ego, disableFilters: true },
+    { Header: 'Wgt', accessor: d => d.wgt, disableFilters: true },
+    { Header: 'Hgt', accessor: d => d.height, disableFilters: true },
+    { Header: 'Player Type', accessor: d => d.playerTendency, canFilter: true },
+    { Header: 'Role 1', accessor: d => d.roleWeapon[0], canFilter: true },
+    { Header: 'Role 2', accessor: d => d.roleWeapon[1], canFilter: true }
+  ]
+
 const PlayerContent = ({players, position}) => {
    let columns;
   
@@ -148,6 +182,8 @@ const PlayerContent = ({players, position}) => {
     columns = wrColumns;
   } else if (position.includes('FB')){
     columns = blockingColumns;
+  }else if (position.includes('CB')){
+    columns = defensiveColumns
   } else {
     columns = []; // Default case
   }

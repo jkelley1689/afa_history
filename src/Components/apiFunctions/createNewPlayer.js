@@ -1,5 +1,6 @@
 import { generateClient } from 'aws-amplify/api'
-import { createPassingStat, createRushingStat, createPlayer, createReceivingStat, updatePlayer, createBlockingStat } from '../../graphql/mutations'
+import { createPassingStat, createRushingStat, createPlayer, createReceivingStat, updatePlayer, createBlockingStat, createDefensiveStat } from '../../graphql/mutations'
+import { input } from '@nextui-org/react'
 
 async function createNewPlayer(data){
 
@@ -40,15 +41,20 @@ async function createNewPlayer(data){
     }
     const client = generateClient()
 
-    await client.graphql({
-        query: createPlayer,
-        variables: {input: player},
-        authMode: "apiKey"
-    }).then(res => {
-        console.log(res)
+    try{
+        const res = await client.graphql({
+            query: createPlayer,
+            variables: {input: player},
+            authMode: "apiKey"
+        })
         playerId = res.data.createPlayer.id
         CreatePlayerStats()
-    })
+    }catch(error){
+        console.error("Error creating player:", error)
+        console.log('Player:', player.fName + " " + player.lName)
+    }
+
+    
 
 
     function CreatePlayerStats(){
@@ -74,6 +80,18 @@ async function createNewPlayer(data){
             || player.position === 'RT'
         ){
             createBlockingStats()
+        }
+        else if(player.position === 'CB'
+            || player.position === 'FS'
+            || player.position === 'SS'
+            || player.position === 'DT'
+            || player.position === 'RDE'
+            || player.position === 'LDE'
+            || player.position === 'ROLB'
+            || player.position === 'ILB'
+            || player.position === 'LOLB'
+        ){
+            createDefensiveStats()
         }
     }
 
@@ -172,9 +190,7 @@ async function createNewPlayer(data){
             console.log('Player successfully updated');
         } catch (error) {
             console.error('Error updating player with rec stat ID:', error);
-        }
-
-        
+        }  
     }
     
     async function createBlockingStats(){
@@ -199,6 +215,37 @@ async function createNewPlayer(data){
             console.log('Player successfully updated');
         } catch (error) {
             console.error('Error updating player with blocking stat ID:', error);
+        }
+    }
+
+    async function createDefensiveStats() {
+        let defStats = {
+            tackles: data.TACKLES,
+            tfl: data.TFL,
+            sacks: data.SACKS,
+            ff: data.FF,
+            td: data.TD,
+            int: data.INT,
+            pass_deflection: data['PASS DEFLECTION'],
+            catch_allowed: data['CATCH ALLOWED']
+        }
+        
+        try {
+            const defStatResponse = await client.graphql({
+                query: createDefensiveStat,
+                variables: { input: defStats }
+            });
+        
+            let defStatID = defStatResponse.data.createDefensiveStat.id;
+        
+            await client.graphql({
+                query: updatePlayer,
+                variables: { input: { id:playerId, playerDefensiveStatId: defStatID } }
+            });
+            
+            console.log('Player successfully updated');
+        } catch (error) {
+            console.error('Error updating player with def stat ID:', error);
         }
     }
 
