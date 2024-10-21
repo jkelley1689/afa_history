@@ -96,7 +96,7 @@ const Stats = () => {
   }, [position, year]);
 
   if (loading) {
-    return <div>Loading {position.join(', ')} stats for {year}</div>;
+    return <div style={{paddingTop: 150}}>Loading {position.join(', ')} stats for {year}</div>;
   }
 
   return (

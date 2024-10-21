@@ -112,7 +112,7 @@ const qbColumns = [
   const blockingColumns = [
     ...commonColumns,
     { Header: 'Pancakes', accessor: d => d.BlockingStat?.pancakes, disableFilters: true },
-    { Header: 'Sacks Allowed', accessor: d => d.BlockingStat?.sacksAllowed, disableFilters: true },
+    { Header: 'Sacks Allowed', accessor: d => d.BlockingStat?.sacks_allowed, disableFilters: true },
     { Header: 'Age', accessor: d => d.age, disableFilters: true },
     { Header: 'Speed', accessor: d => d.speed, disableFilters: true },
     { Header: 'Acceleration', accessor: d => d.acceleration, disableFilters: true },
