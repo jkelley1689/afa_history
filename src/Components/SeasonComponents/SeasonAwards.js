@@ -1,10 +1,10 @@
 import React from 'react'
 
 import './SeasonAwards.css'
-import standings from '../../Images/2022_Standings.png'
+import SeasonStandings from './SeasonStandings'
 
-const SeasonAwards = ({selectedYearResults}) => {
-    console.log(selectedYearResults)
+
+const SeasonAwards = ({selectedYearResults, year}) => {
   return (
     <div className='awards'>
         <div className='awards-container'>
@@ -55,7 +55,7 @@ const SeasonAwards = ({selectedYearResults}) => {
                     <span className='award-value'>{selectedYearResults.RecLeader}</span>
                 </div>
             </div>
-            <img src={standings} alt='none'></img>
+            <SeasonStandings year={year} />
         </div>
     </div>
   )

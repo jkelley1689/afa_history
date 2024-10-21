@@ -21,7 +21,7 @@ const SeasonCard = () => {
         <SeasonNavBar year={year}/>
       </div>
       <div className='season-awards'>
-        <SeasonAwards selectedYearResults={selectedYear[0]} />
+        <SeasonAwards selectedYearResults={selectedYear[0]} year={year}/>
       </div>
     </div>
   )

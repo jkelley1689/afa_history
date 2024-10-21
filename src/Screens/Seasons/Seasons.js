@@ -8,7 +8,7 @@ const seasons = [
     {value: '2019', label: '2019', result: "NA"},
     {value: '2021', label: '2021', result: "STL Sentinels defeat NY Intimidators 37-27"},
     {value: '2022', label: '2022', result: "STL Sentinels defeat Hartford Hellions 31-17"},
-    {value: '2023', label: '2023', result: "NA"},
+    {value: '2023', label: '2023', result: "SLC Comets defeat the Louisville Stallions 55-27"},
 ]
 
 const columns = [
