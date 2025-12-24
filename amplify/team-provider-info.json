@@ -16,5 +16,23 @@
         "afastattracker": {}
       }
     }
+  },
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-afastattracker-master-c3b44-authRole",
+      "UnauthRoleArn": "arn:aws:iam::767397903993:role/amplify-afastattracker-master-c3b44-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::767397903993:role/amplify-afastattracker-master-c3b44-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-afastattracker-master-c3b44-deployment",
+      "UnauthRoleName": "amplify-afastattracker-master-c3b44-unauthRole",
+      "StackName": "amplify-afastattracker-master-c3b44",
+      "StackId": "arn:aws:cloudformation:us-east-1:767397903993:stack/amplify-afastattracker-master-c3b44/46545ca0-7769-11ef-96d5-1258f856151f",
+      "AmplifyAppId": "dzro88vmfwibb"
+    },
+    "categories": {
+      "api": {
+        "afastattracker": {}
+      }
+    }
   }
 }

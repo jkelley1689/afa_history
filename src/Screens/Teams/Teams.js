@@ -48,7 +48,6 @@ teams.sort(function (a,b){
 const Teams = () => {
   return (
     <div className='teams'>
-        <Navbar />
         <Table columns={columns} data={teams} path={"Teams"}/>
     </div>
     )

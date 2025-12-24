@@ -40,6 +40,20 @@ const results = [
         PassingLeader: "Blake Bortles (Barcelona) 4150 Yds",
         RushingLeader: "Leonard Fournette (SLC) 1809 Yds",
         RecLeader: "Breshard Perriman (Hawaii) 1476 Yds"
+    },
+    {
+        season: 2024,
+        champion: "London Reapers",
+        OPOY: "Nick Foles (Hawaii)",
+        DPOY: "Ivan Pace Jr (London)",
+        ROTY: "Sam Hartman (Memphis)",
+        GMOY: "Jeff Graves (SLC)",
+        CBPOY: "Kevin White (Orlando)",
+        SGA: "DeAndre Walker (Alb)",
+        ABMVP: "Trevor Simian (London)",
+        PassingLeader: "Sam Hartman (Memphis)",
+        RushingLeader: "Leonard Fournette (SLC)",
+        RecLeader: "Kevin White (Orlando)"
     }
 ]
 export default results

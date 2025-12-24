@@ -1,6 +1,6 @@
 import { generateClient } from 'aws-amplify/api'
 import { createPassingStat, createRushingStat, createPlayer, createReceivingStat, updatePlayer, createBlockingStat, createDefensiveStat } from '../../graphql/mutations'
-import { input } from '@nextui-org/react'
+
 
 async function createNewPlayer(data){
 

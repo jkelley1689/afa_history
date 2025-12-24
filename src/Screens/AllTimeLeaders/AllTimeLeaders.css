@@ -1,0 +1,25 @@
+.all-time-leaders {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap; /* allows tables to move to next row if screen is too small */
+  gap: 2rem; /* space between tables */
+  justify-content: flex-start; /* align tables to the left */
+}
+
+.stat-section {
+  flex: 1 1 300px; /* grow/shrink, min width 300px */
+  max-width: 30%; /* no table will take more than ~half the container */
+  background-color: #1a1a1a; /* optional: dark background */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.stat-header {
+  margin-bottom: 1rem;
+  color: #f0f0f0;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
