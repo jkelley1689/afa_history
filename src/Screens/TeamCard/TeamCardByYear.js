@@ -7,6 +7,7 @@ import { qbColumns, rbColumns, wrColumns, blockingColumns, defensiveColumns } fr
 import { teams } from '../Teams/Teams';
 import Table from '../../Components/SVComponents/Table';
 import SeasonNavBar from '../../Components/SeasonNavBar/SeasonNavBar';
+import LoadingScreen from '../Loading/LoadingScreen';
 import './TeamCard.css';
 
 const POSITION_GROUPS = [
@@ -53,8 +54,7 @@ const TeamCardByYear = () => {
   const teamAbv = teams.find(t => t.label === team)?.value ?? team;
   const { players, loading, error } = usePlayers({ year, team: teamAbv });
 
-
-  if (loading) return <div style={{ paddingTop: 150 }}>Loading {team} {year} roster...</div>;
+  if (loading) return <LoadingScreen message={`Loading ${year} ${team} roster...`} />;
   if (error)   return <div style={{ paddingTop: 150 }}>Failed to load players.</div>;
 
   return (
