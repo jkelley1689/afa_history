@@ -262,133 +262,148 @@ const allTimeStats = {
         {
             "yards": [
                 {
-                    "player": "D'ontae Foreman",
-                    "yards": 6677
+                    "player": "Trent Richardson",
+                    "yards": 14643
                 },
                 {
-                    "player": "Trent Richardson",
-                    "yards": 6552
+                    "player": "D'onta Foreman",
+                    "yards": 8531
+                },
+                {
+                    "player": "Bishop Sankey",
+                    "yards": 8259
+                },
+                {
+                    "player": "Arian Foster",
+                    "yards": 6753
+                },
+                {
+                    "player": "Kareem Hunt",
+                    "yards": 6668
                 },
                 {
                     "player": "James Robinson",
                     "yards": 6518
                 },
                 {
-                    "player": "Kareem Hunt",
-                    "yards": 6437
+                    "player": "Montee Ball",
+                    "yards": 6457
                 },
                 {
                     "player": "Wendell Smallwood",
                     "yards": 6347
                 },
                 {
-                    "player": "Travis Prentice",
-                    "yards": 5552
+                    "player": "Beanie Wells",
+                    "yards": 6007
                 },
                 {
-                    "player": "Doug Chapman",
-                    "yards": 5275
-                },
-                {
-                    "player": "John Avery",
-                    "yards": 5261
-                },
-                {
-                    "player": "Todd Gurley",
-                    "yards": 4335
-                },
-                {
-                    "player": "Curtis Keaton",
-                    "yards": 4228
+                    "player": "Jay Ajayi",
+                    "yards": 5841
                 }
             ],
             "td": [
                 {
-                    "player": "John Avery",
-                    "td": 67
-                },
-                {
-                    "player": "Curtis Keaton",
-                    "td": 60
-                },
-                {
-                    "player": "Travis Prentice",
-                    "td": 59
-                },
-                {
-                    "player": "Doug Chapman",
-                    "td": 53
-                },
-                {
                     "player": "Trent Richardson",
-                    "td": 49
+                    "td": 92
                 },
+                
                 {
-                    "player": "Kareem Hunt",
-                    "td": 45
+                    "player": "Bishop Sankey",
+                    "td": 48
                 },
+                
                 {
-                    "player": "Keith Burnell",
-                    "td": 43
-                },
-                {
-                    "player": "Wendell Smallwood",
-                    "td": 39
+                    "player": "Arian Foster",
+                    "td": 48
                 },
                 {
                     "player": "D'onta Foreman",
-                    "td": 38
+                    "td": 47
+                },
+                
+                {
+                    "player": "Kareem Hunt",
+                    "td": 47
                 },
                 {
-                    "player": "Sultan McCullough",
-                    "td": 37
+                    "player": "John Avery",
+                    "td": 47
+                },
+                {
+                    "player": "Jay Ajayi",
+                    "td": 44
+                },
+                {
+                    "player": "Knile Davis",
+                    "td": 43
+                },
+                {
+                    "player": "Travis Prentice",
+                    "td": 40
+                },
+                {
+                    "player": "Curtis Keaton",
+                    "td": 40
                 }
             ],
             "ypc": [
                 {
                     "player": "John Avery",
-                    "YPC": 6.39
-                },
-                {
-                    "player": "Trung Canidate",
-                    "YPC": 5.69
-                },
-                {
-                    "player": "Keith Burnell",
-                    "YPC": 5.68
+                    "YPC": 6.35
                 },
                 {
                     "player": "Travis Prentice",
-                    "YPC": 5.67
+                    "YPC": 5.97
+                },
+                {
+                    "player": "Doug Chapman",
+                    "YPC": 5.66
                 },
                 {
                     "player": "Leonard Fournette",
                     "YPC": 5.61
                 },
                 {
-                    "player": "Doug Chapman",
-                    "YPC": 5.51
-                },
-                {
-                    "player": "Sultan McCullough",
-                    "YPC": 5.48
-                },
-                {
                     "player": "Curtis Keaton",
-                    "YPC": 5.37
+                    "YPC": 5.49
                 },
                 {
                     "player": "Kareem Hunt",
-                    "YPC": 5.10
+                    "YPC": 5.04
                 },
                 {
                     "player": "Trey Ragas",
                     "YPC": 5.03
+                },
+                {
+                    "player": "Arian Foster",
+                    "YPC": 4.94
+                },
+                {
+                    "player": "D'onta Foreman",
+                    "YPC": 4.87
+                },
+                {
+                    "player": "Trent Richardson",
+                    "YPC": 4.78
                 }
             ],
             "fumbles":[
                 {
+                    "player": "Trent Richardson",
+                    "fumbles": 40
+                },
+                {
+                    "player": "Knile Davis",
+                    "fumbles": 34
+                },
+                {
                     "player": "D'onta Foreman",
+                    "fumbles": 26
+                },
+                {
+                    "player": "Zach Zenner",
                     "fumbles": 22
                 },
                 {
@@ -396,7 +411,11 @@ const allTimeStats = {
                     "fumbles": 20
                 },
                 {
-                    "player": "Trent Richardson",
+                    "player": "Onterrio McCalebb",
+                    "fumbles": 20
+                },
+                {
+                    "player": "Arian Foster",
                     "fumbles": 19
                 },
                 {
@@ -408,109 +427,117 @@ const allTimeStats = {
                     "fumbles": 17
                 },
                 {
-                    "player": "Kenyan Drake",
-                    "fumbles": 11
+                    "player": "Bishop Sankey",
+                    "fumbles": 17
                 },
-                {
-                    "player": "Knile Davis",
-                    "fumbles": 11
-                },
-                {
-                    "player": "Kareem Hunt",
-                    "fumbles": 10
-                },
-                {
-                    "player": "James Robinson",
-                    "fumbles": 10
-                },
-                {
-                    "player": "TJ Yeldon",
-                    "fumbles": 10
-                }
             ],
             "btk": [
                 {
+                    "player": "Trent Richardson",
+                    "btk": 862
+                },
+                {
                     "player": "D'onta Foreman",
-                    "btk": 427
+                    "btk": 524
+                },
+                {
+                    "player": "Legerrette Blount",
+                    "btk": 414
                 },
                 {
                     "player": "James Robinson",
                     "btk": 408
                 },
                 {
-                    "player": "Trent Richardson",
-                    "btk": 404
+                    "player": "Arian Foster",
+                    "btk": 401
+                },
+                {
+                    "player": "Beanie Wells",
+                    "btk": 395
+                },
+                {
+                    "player": "Bishop Sankey",
+                    "btk": 391
+                },
+                {
+                    "player": "Jay Ajayi",
+                    "btk": 349
                 },
                 {
                     "player": "Wendell Smallwood",
                     "btk": 342
-                },
-                {
-                    "player": "Kareem Hunt",
-                    "btk": 322
-                },
-                {
-                    "player": "Todd Gurley",
-                    "btk": 283
-                },
-                {
-                    "player": "Jay Ajayi",
-                    "btk": 268
-                },
-                {
-                    "player": "Abram Smith",
-                    "btk": 246
-                },
-                {
-                    "player": "Jordan Howard",
-                    "btk": 229
                 }
             ],
             "afh":[
+                {
+                    "player": "Trent Richardson",
+                    "afh": 9038
+                },
+                {
+                    "player": "D'onta Foreman",
+                    "afh": 5377
+                },
+                {
+                    "player": "Bishop Sankey",
+                    "afh": 4753
+                },
+                {
+                    "player": "Arian Foster",
+                    "afh": 4398
+                },
+                {
+                    "player": "Kareem Hunt",
+                    "afh": 4299
+                },
                 {
                     "player": "James Robinson",
                     "afh": 4206
                 },
                 {
-                    "player": "Kareem Hunt",
-                    "afh": 4175
+                    "player": "Legerrette Blount",
+                    "afh": 4099
                 },
                 {
-                    "player": "D'onta Foreman",
-                    "afh": 4133
-                },
-                {
-                    "player": "Trent Richardson",
-                    "afh": 4098
+                    "player": "Beanie Wells",
+                    "afh": 4040
                 },
                 {
                     "player": "Wendell Smallwood",
                     "afh": 3777
                 },
                 {
-                    "player": "Todd Gurley",
-                    "afh": 2928
+                    "player": "Montee Ball",
+                    "afh": 3642
                 },
-                {
-                    "player": "Jay Ajayi",
-                    "afh": 2624
-                },
-                {
-                    "player": "Tevin Coleman",
-                    "afh": 2539
-                },
-                {
-                    "player": "Bishop Sankey",
-                    "afh": 2442
-                },
-                {
-                    "player": "Jordan Howard",
-                    "afh": 2432
-                }
             ],
             "twtyPlus":[
                 {
+                    "player": "Trent Richardson",
+                    "twentyPlus": 74
+                },
+                {
+                    "player": "Beanie Wells",
+                    "twentyPlus": 36
+                },
+                {
+                    "player": "Arian Foster",
+                    "twentyPlus": 35
+                },
+                {
+                    "player": "Bishop Sankey",
+                    "twentyPlus": 34
+                },
+                {
+                    "player": "D'onta Foreman",
+                    "twentyPlus": 33
+                },
+                {
                     "player": "Wendell Smallwood",
+                    "twentyPlus": 31
+                },
+                {
+                    "player": "Jay Ajayi",
                     "twentyPlus": 31
                 },
                 {
@@ -522,32 +549,8 @@ const allTimeStats = {
                     "twentyPlus": 28
                 },
                 {
-                    "player": "D'onta Foreman",
+                    "player": "Brian Leonard",
                     "twentyPlus": 27
-                },
-                {
-                    "player": "Trent Richardson",
-                    "twentyPlus": 26
-                },
-                {
-                    "player": "Leonard Fournette",
-                    "twentyPlus": 25
-                },
-                {
-                    "player": "Jay Ajayi",
-                    "twentyPlus": 24
-                },
-                {
-                    "player": "Jordon Howard",
-                    "twentyPlus": 18
-                },
-                {
-                    "player": "Todd Gurley",
-                    "twentyPlus": 16
-                },
-                {
-                    "player": "Bishop Sankey",
-                    "twentyPlus": 16
                 }
             ]
         }

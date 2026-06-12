@@ -1,57 +1,53 @@
 import React from 'react'
-import Table from '../../Components/SVComponents/Table'
-import Navbar from '../../Components/Nav/Navbar'
-
+import { Link } from 'react-router-dom'
 import './Teams.css'
 
-const teams = [
-    {value: 'WSH', label: 'Washington Americans'},
-    {value: 'ALB', label: 'Albuquerque Arrows'},
-    {value: 'TUL', label: 'Tulsa Bandits'},
-    {value: 'PRT', label: 'Portland Barons'},
-    {value: 'BIR', label: 'Birmingham Boars'},
-    {value: 'BRC', label: 'Barcelona Bulls'},
+export const teams = [
+    {value: 'Wsh', label: 'Washington Americans'},
+    {value: 'Alb', label: 'Albuquerque Arrows'},
+    {value: 'Tul', label: 'Tulsa Bandits'},
+    {value: 'Prt', label: 'Portland Barons'},
+    {value: 'Bir', label: 'Birmingham Boars'},
+    {value: 'Brc', label: 'Barcelona Bulls'},
     {value: 'SLC', label: 'Salt Lake City Comets'},
-    {value: 'SD', label: 'San Diego Corsairs'},
-    {value: 'CHI', label: 'Chicago Demons'},
-    {value: 'CLM', label: 'Columbus Explorers'},
-    {value: 'SJ', label: 'San Jose Frenzy'},
-    {value: 'ORL', label: 'Orlando Gales'},
-    {value: 'DET', label: 'Detriot Griffins'},
-    {value: 'HRT', label: 'Hartford Hellions'},
-    {value: 'NY', label: 'New York Intimidators'},
-    {value: 'FRK', label: 'Frankfurt Macht'},
-    {value: 'SRC', label: 'Sacramento Owls'},
-    {value: 'LON', label: 'London Reapers'},
-    {value: 'SA', label: 'San Antonio Scorpions'},
+    {value: 'SD',  label: 'San Diego Corsairs'},
+    {value: 'Chi', label: 'Chicago Demons'},
+    {value: 'Clm', label: 'Columbus Explorers'},
+    {value: 'SJ',  label: 'San Jose Frenzy'},
+    {value: 'Orl', label: 'Orlando Gales'},
+    {value: 'Det', label: 'Detriot Griffins'},
+    {value: 'Hrt', label: 'Hartford Hellions'},
+    {value: 'NY',  label: 'New York Intimidators'},
+    {value: 'Frk', label: 'Frankfurt Macht'},
+    {value: 'Src', label: 'Sacramento Owls'},
+    {value: 'Lon', label: 'London Reapers'},
+    {value: 'SA',  label: 'San Antonio Scorpions'},
     {value: 'STL', label: 'St.Louis Sentinels'},
-    {value: 'HAW', label: 'Hawaii Sharks'},
-    {value: 'LOU', label: 'Louisville Stallions'},
-    {value: 'DUB', label: 'Dublin Wolfhounds'},
-    {value: 'MEM', label: 'Memphis Wolves'}
+    {value: 'Haw', label: 'Hawaii Sharks'},
+    {value: 'Lou', label: 'Louisville Stallions'},
+    {value: 'Dub', label: 'Dublin Wolfhounds'},
+    {value: 'Mem', label: 'Memphis Wolves'},
 ]
 
-const columns = [
-    {Header: 'Team', accessor: 'label'}
-]
-
-teams.sort(function (a,b){
-    if(a.label < b.label){
-        return -1
-    }
-    if (a.label > b.label){
-        return 1
-    }
-    return 0
-})
+teams.sort((a, b) => a.label.localeCompare(b.label))
 
 const Teams = () => {
   return (
     <div className='teams'>
-        <Table columns={columns} data={teams} path={"Teams"}/>
+      <div className='teams-grid'>
+        {teams.map(team => (
+          <Link
+            key={team.value}
+            className='team-card'
+            to={`/Teams/${team.label}`}
+          >
+            <span className='team-card-abbv'>{team.value}</span>
+            <span className='team-card-name'>{team.label}</span>
+          </Link>
+        ))}
+      </div>
     </div>
-    )
-    
+  )
 }
 
 export default Teams

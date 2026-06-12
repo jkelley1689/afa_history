@@ -32,6 +32,11 @@ const Navbar2 = () => {
                             Seasons
                         </Link>
                     </Nav.Link>
+                    <Nav.Link>
+                        <Link to={`/CareerSearch`}>
+                            Player Search
+                        </Link>
+                    </Nav.Link>
                     <NavDropdown title='All Time Leaders' id='leaders-stats-dropdown'>
                         {statTypes.map(stat => (
                             <NavDropdown.Item>

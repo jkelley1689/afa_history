@@ -12,6 +12,10 @@ import SeasonCard from "./Screens/SeasonCard/SeasonCard";
 import Stats from "./Screens/Stats/Stats";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AllTimeLeaders from "./Screens/AllTimeLeaders/AllTimeLeaders";
+import TeamCardByYear from "./Screens/TeamCard/TeamCardByYear";
+import CareerStats from "./Screens/Career/CareerStats";
+import CareerSearch from "./Screens/Career/CareerSearch";
+
 Amplify.configure(config);
 
 function App() {
@@ -24,10 +28,13 @@ function App() {
           <Route path="/uploadStats" Component={UploadStatSheet} />
           <Route path="/Teams" Component={Teams} />
           <Route path="/Teams/:team" Component={TeamCard} />
+          <Route path="/Teams/:team/:year" Component={TeamCardByYear} />
           <Route path="/Seasons" Component={Seasons} />
           <Route path="/Seasons/:year" Component={SeasonCard} />
           <Route path="/Seasons/:year/:statType" Component={Stats} />
           <Route path="/All-Time-Leaders/:statType" Component={AllTimeLeaders} />
+          <Route path="/Career/:playerName" Component={CareerStats} />
+          <Route path="/CareerSearch" Component={CareerSearch} />
         </Routes>
       </div>
     </Router>

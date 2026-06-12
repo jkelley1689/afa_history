@@ -58,7 +58,7 @@ const DefaultColumnFilter = ({ column: { filterValue, setFilter } }) => {
   );
 };
 
-const Table = ({ columns, data, path }) => {
+const Table = ({ columns, data, path, showFilters = false, showFooter = false }) => {
   const defaultColumn = {
     Filter: DefaultColumnFilter,
   };
@@ -67,6 +67,7 @@ const Table = ({ columns, data, path }) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    footerGroups,
     rows,
     prepareRow,
   } = useTable(
@@ -98,7 +99,7 @@ const Table = ({ columns, data, path }) => {
                         : ' 🔼'
                       : ''}
                   </span>
-                  <div>{column.canFilter ? column.render('Filter') : null}</div>
+                  <div>{column.canFilter && showFilters ? column.render('Filter') : null}</div>
                 </th>
               ))}
             </tr>
@@ -112,11 +113,7 @@ const Table = ({ columns, data, path }) => {
                 {row.cells.map((cell) => {
                   if (cell.column.id === 'label') {
                     return (
-                      <td
-                        {...cell.getCellProps()}
-                        className="table-cell"
-                        key={cell.column.id}
-                      >
+                      <td {...cell.getCellProps()} className="table-cell" key={cell.column.id}>
                         <Link to={`/${path}/` + cell.value}>{cell.render('Cell')}</Link>
                       </td>
                     );
@@ -136,6 +133,19 @@ const Table = ({ columns, data, path }) => {
             );
           })}
         </tbody>
+        {showFooter && (
+        <tfoot>
+          {footerGroups.map(group => (
+            <tr {...group.getFooterGroupProps()}>
+              {group.headers.map(column => (
+                <td {...column.getFooterProps()} className="table-footer-cell">
+                  {column.render('Footer')}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tfoot>
+      )}
       </table>
     </div>
   );
