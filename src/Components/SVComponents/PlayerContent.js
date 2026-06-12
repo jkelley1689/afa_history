@@ -202,7 +202,7 @@ export const qbColumns = [
 
   export const qbCareerColumns = [
   { Header: 'Year', accessor: d => d.year, disableFilters: true },
-  { Header: 'Team', accessor: d => d.year, disableFilters: true, Footer: () => 'Total' },
+  { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => 'Total' },
   { Header: 'Cmp', accessor: d => d.PassingStat?.cmp, disableFilters: true, Footer: info => info.rows.reduce((sum, row) => sum + (row.values.Cmp || 0), 0) },
   { Header: 'Att', accessor: d => d.PassingStat?.att, disableFilters: true, Footer: info => info.rows.reduce((sum, row) => sum + (row.values.Att || 0), 0) },
   { Header: 'Yds', accessor: d => d.PassingStat?.yds, disableFilters: true, Footer: info => info.rows.reduce((sum, row) => sum + (row.values.Yds || 0), 0) },
@@ -228,8 +228,8 @@ export const qbColumns = [
 ];
 
   export const rbCareerColumns = [
-    { Header: 'Year', accessor: d => d.year, disableFilters: true, Footer: () => 'Total' },
-    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => '' },
+    { Header: 'Year', accessor: d => d.year, disableFilters: true },
+    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => 'Total' },
     { Header: 'Yards', accessor: d => d.RushingStat?.yds, disableFilters: true,
       Footer: info => info.rows.reduce((sum, row) => sum + (row.original.RushingStat?.yds || 0), 0) },
     { Header: 'Att', accessor: d => d.RushingStat?.att, disableFilters: true,
@@ -251,8 +251,8 @@ export const qbColumns = [
   ];
 
   export const wrCareerColumns = [
-    { Header: 'Year', accessor: d => d.year, disableFilters: true, Footer: () => 'Total' },
-    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => '' },
+    { Header: 'Year', accessor: d => d.year, disableFilters: true },
+    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => 'Total' },
     { Header: 'Rec', accessor: d => d.ReceivingStat?.rec, disableFilters: true,
       Footer: info => info.rows.reduce((sum, row) => sum + (row.original.ReceivingStat?.rec || 0), 0) },
     { Header: 'Yds', accessor: d => d.ReceivingStat?.yds, disableFilters: true,
@@ -274,8 +274,8 @@ export const qbColumns = [
   ];
 
   export const defensiveCareerColumns = [
-    { Header: 'Year', accessor: d => d.year, disableFilters: true, Footer: () => 'Total' },
-    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => '' },
+    { Header: 'Year', accessor: d => d.year, disableFilters: true},
+    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => 'Total' },
     { Header: 'Tackles', accessor: d => d.DefensiveStat?.tackles, disableFilters: true,
       Footer: info => info.rows.reduce((sum, row) => sum + (row.original.DefensiveStat?.tackles || 0), 0) },
     { Header: 'TFL', accessor: d => d.DefensiveStat?.tfl, disableFilters: true,
@@ -295,8 +295,8 @@ export const qbColumns = [
   ];
 
   export const blockingCareerColumns = [
-    { Header: 'Year', accessor: d => d.year, disableFilters: true, Footer: () => 'Total' },
-    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => '' },
+    { Header: 'Year', accessor: d => d.year, disableFilters: true },
+    { Header: 'Team', accessor: d => d.team, disableFilters: true, Footer: () => 'Total' },
     { Header: 'Pancakes', accessor: d => d.BlockingStat?.pancakes, disableFilters: true,
       Footer: info => info.rows.reduce((sum, row) => sum + (row.original.BlockingStat?.pancakes || 0), 0) },
     { Header: 'Sacks Allowed', accessor: d => d.BlockingStat?.sacks_allowed, disableFilters: true,
