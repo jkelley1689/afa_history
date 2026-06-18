@@ -553,6 +553,237 @@ const allTimeStats = {
                     "twentyPlus": 27
                 }
             ]
+        },
+    "receivingLeaders":
+        {
+            "rec": [
+                {
+                    "player": "Jeff Fuller",
+                    "rec": 636
+                },
+                {
+                    "player": "Patrick Edwards",
+                    "rec": 553
+                },
+                {
+                    "player": "Martavis Bryant",
+                    "rec": 507
+                },
+                {
+                    "player": "Josh Harper",
+                    "rec": 497
+                },
+                {
+                    "player": "Stephen Hill",
+                    "rec": 442
+                },
+                {
+                    "player": "Deonte Thompson",
+                    "rec": 433
+                },
+                {
+                    "player": "Aaron Dobson",
+                    "rec": 424
+                },
+                {
+                    "player": "Antwan Goodley",
+                    "rec": 401
+                },
+                {
+                    "player": "Chris Owusu",
+                    "rec": 324
+                }
+            ],
+            "yards": [
+                {
+                    "player": "Patrick Edwards",
+                    "yards": 8948
+                },
+                {
+                    "player": "Jeff Fuller",
+                    "yards": 8809
+                },
+                {
+                    "player": "Stephen Hill",
+                    "yards": 7367
+                },
+                {
+                    "player": "Martavis Bryant",
+                    "yards": 7219
+                },
+                {
+                    "player": "Deonte Thompson",
+                    "yards": 7077
+                },
+                {
+                    "player": "Josh Harper",
+                    "yards": 7035
+                },
+                {
+                    "player": "Aaron Dobson",
+                    "yards": 6877
+                },
+                {
+                    "player": "Antwan Goodley",
+                    "yards": 6470
+                },
+                {
+                    "player": "Chris Owusu",
+                    "yards": 6402
+                }
+            ],
+            "ypc": [
+                {
+                    "player": "Chris Owusu",
+                    "YPC": 19.8
+                },
+                {
+                    "player": "Stephen Hill",
+                    "YPC": 16.7
+                },
+                {
+                    "player": "Deonte Thompson",
+                    "YPC": 16.3
+                },
+                {
+                    "player": "Patrick Edwards",
+                    "YPC": 16.2
+                },
+                {
+                    "player": "Aaron Dobson",
+                    "YPC": 16.2
+                },
+                {
+                    "player": "Antwan Goodley",
+                    "YPC": 16.1
+                },
+                {
+                    "player": "Martavis Bryant",
+                    "YPC": 14.2
+                },
+                {
+                    "player": "Josh Harper",
+                    "YPC": 14.2
+                },
+                {
+                    "player": "Jeff Fuller",
+                    "YPC": 13.9
+                }
+            ],
+            "td": [
+                {
+                    "player": "Patrick Edwards",
+                    "td": 80
+                },
+                {
+                    "player": "Jeff Fuller",
+                    "td": 67
+                },
+                {
+                    "player": "Stephen Hill",
+                    "td": 59
+                },
+                {
+                    "player": "Deonte Thompson",
+                    "td": 59
+                },
+                {
+                    "player": "Aaron Dobson",
+                    "td": 58
+                },
+                {
+                    "player": "Antwan Goodley",
+                    "td": 55
+                },
+                {
+                    "player": "Chris Owusu",
+                    "td": 52
+                },
+                {
+                    "player": "Martavis Bryant",
+                    "td": 48
+                },
+                {
+                    "player": "Josh Harper",
+                    "td": 47
+                }
+            ],
+            "yac": [
+                {
+                    "player": "Patrick Edwards",
+                    "YAC": 2162
+                },
+                {
+                    "player": "Deonte Thompson",
+                    "YAC": 1870
+                },
+                {
+                    "player": "Stephen Hill",
+                    "YAC": 1762
+                },
+                {
+                    "player": "Aaron Dobson",
+                    "YAC": 1693
+                },
+                {
+                    "player": "Chris Owusu",
+                    "YAC": 1654
+                },
+                {
+                    "player": "Antwan Goodley",
+                    "YAC": 1635
+                },
+                {
+                    "player": "Jeff Fuller",
+                    "YAC": 1622
+                },
+                {
+                    "player": "Martavis Bryant",
+                    "YAC": 1578
+                },
+                {
+                    "player": "Josh Harper",
+                    "YAC": 1211
+                }
+            ],
+            "drops": [
+                {
+                    "player": "Jeff Fuller",
+                    "drops": 71
+                },
+                {
+                    "player": "Chris Owusu",
+                    "drops": 71
+                },
+                {
+                    "player": "Stephen Hill",
+                    "drops": 67
+                },
+                {
+                    "player": "Patrick Edwards",
+                    "drops": 64
+                },
+                {
+                    "player": "Josh Harper",
+                    "drops": 61
+                },
+                {
+                    "player": "Deonte Thompson",
+                    "drops": 60
+                },
+                {
+                    "player": "Martavis Bryant",
+                    "drops": 54
+                },
+                {
+                    "player": "Antwan Goodley",
+                    "drops": 52
+                },
+                {
+                    "player": "Aaron Dobson",
+                    "drops": 39
+                }
+            ]
         }
 }
 export default allTimeStats

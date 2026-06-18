@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { generateClient } from 'aws-amplify/api';
-import { listPlayers } from '../../graphql/queries'; // adjust path as needed
-import  usePlayers  from '../../Components/apiFunctions/usePlayers';
+import usePlayers from '../../Components/apiFunctions/usePlayers';
 import { qbColumns, rbColumns, wrColumns, blockingColumns, defensiveColumns } from '../../Components/SVComponents/PlayerContent';
 import { teams } from '../Teams/Teams';
 import Table from '../../Components/SVComponents/Table';
 import SeasonNavBar from '../../Components/SeasonNavBar/SeasonNavBar';
 import LoadingScreen from '../Loading/LoadingScreen';
+import gmHistory from './gmHistory.json';
 import './TeamCard.css';
 
 const POSITION_GROUPS = [
@@ -53,6 +52,11 @@ const TeamCardByYear = () => {
   const { team, year } = useParams(); // route: /Teams/:team/:year
   const teamAbv = teams.find(t => t.label === team)?.value ?? team;
   const { players, loading, error } = usePlayers({ year, team: teamAbv });
+  const yearNumber = Number(year);
+  const yearGm = (gmHistory[team] || []).find(gm =>
+    gm.years.some(gmYear => gmYear.year === yearNumber)
+  );
+  const yearRecord = yearGm?.years.find(gmYear => gmYear.year === yearNumber)?.record;
 
   if (loading) return <LoadingScreen message={`Loading ${year} ${team} roster...`} />;
   if (error)   return <div style={{ paddingTop: 150 }}>Failed to load players.</div>;
@@ -67,7 +71,13 @@ const TeamCardByYear = () => {
         showDefensiveStats={false}
       />
       <div className='team-card-by-year'>
-        <h1 className='team-card-title'>{team} — {year}</h1>
+        <h1 className='team-card-title'>{team} - {year}</h1>
+        {yearRecord && (
+          <div className='team-year-record'>
+            <span>{yearRecord}</span>
+            {yearGm && <span>{yearGm.name}</span>}
+          </div>
+        )}
 
         {POSITION_GROUPS.map(({ label, positions, columns, filter, sort }) => {
           let group = players.filter(p => positions.includes(p.position));

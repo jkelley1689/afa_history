@@ -1,0 +1,103 @@
+.team-card-page {
+  min-height: 100vh;
+}
+
+.team-card-content {
+  padding: 120px 24px 48px;
+}
+
+.team-history-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-history-header {
+  margin-bottom: 18px;
+}
+
+.team-history-header h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  color: #0c0b0b;
+}
+
+.team-history-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #a0a8c0;
+}
+
+.gm-history-table-wrap {
+  overflow-x: auto;
+  border: 0.5px solid #2e2e42;
+  border-radius: 8px;
+}
+
+.gm-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.gm-history-table th,
+.gm-history-table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.gm-history-table th {
+  background-color: #1e1e2e;
+  color: #a0a8c0;
+  font-weight: 700;
+  border-bottom: 1px solid #2e2e42;
+}
+
+.gm-history-table td {
+  background-color: #13131f;
+  color: #f0f0f0;
+  border-bottom: 0.5px solid #2e2e42;
+}
+
+.gm-history-table tbody tr:nth-child(even) td {
+  background-color: #16162a;
+}
+
+.gm-history-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.gm-history-table td:nth-child(2),
+.gm-history-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.gm-history-empty {
+  margin: 0;
+  padding: 18px;
+  border: 0.5px solid #2e2e42;
+  border-radius: 8px;
+  background-color: #13131f;
+  color: #f0f0f0;
+}
+
+.team-year-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+@media (max-width: 640px) {
+  .team-card-content {
+    padding: 96px 12px 32px;
+  }
+
+  .team-history-header h1 {
+    font-size: 1.5rem;
+  }
+}

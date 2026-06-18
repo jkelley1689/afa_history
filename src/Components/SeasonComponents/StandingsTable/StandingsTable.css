@@ -1,0 +1,89 @@
+.standings-wrapper {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Conference cell - Stars = deep blue, Stripes = deep red */
+.conference-cell {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border-right: 2px solid #555;
+  padding: 4px;
+  white-space: nowrap;
+  width: 20px;
+}
+
+.conference-cell.stars {
+  background-color: #1a3a6b;
+}
+
+.conference-cell.stripes {
+  background-color: #6b1a1a;
+}
+
+.division-title-cell {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 6px;
+  background-color: #2a2a2a;
+  border-left: 3px solid #555;
+}
+
+.division-title-cell.stars {
+  border-left-color: #4a7fd4;
+}
+
+.division-title-cell.stripes {
+  border-left-color: #d44a4a;
+}
+
+.column-header-row th {
+  text-align: left;
+  padding: 2px 4px;
+  background-color: #111;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #888;
+  border-bottom: 1px solid #333;
+}
+
+.standings-table td {
+  padding: 2px 4px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  border-bottom: 1px solid #222;
+}
+
+/* Alternating row colors */
+.standings-table tbody tr.team-row:nth-child(odd) td {
+  background-color: #1a1a1a;
+}
+
+.standings-table tbody tr.team-row:nth-child(even) td {
+  background-color: #222;
+}
+
+.standings-table tbody tr.team-row:hover td {
+  background-color: #2e2e2e;
+}
+
+.standings-table tbody tr.team-row td {
+  color: #fff;
+}
