@@ -1,6 +1,26 @@
 .seasons{
-    margin: auto;
-    padding-top: 6rem;
-    padding-left: 10px;
-    width: 100%;
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 46px 0;
+}
+
+.seasons::before {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--afa-muted, #667085);
+    content: "League timeline";
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.seasons::after {
+    display: block;
+    margin-bottom: 24px;
+    color: var(--afa-navy, #17253f);
+    content: "Seasons";
+    font-size: clamp(2.3rem, 6vw, 5.2rem);
+    font-weight: 950;
+    line-height: 0.95;
 }

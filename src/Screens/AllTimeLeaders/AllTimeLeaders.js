@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import allTimeStats from './AllTimeLeadersStats';
 import './AllTimeLeaders.css'
@@ -7,13 +7,10 @@ import Table from '../../Components/SVComponents/Table';
 
 
 
-const AllTimeLeaders = () => {
+const AllTimeLeaders = ({ statType: statTypeOverride }) => {
 
-    const {statType} = useParams()
-    let columns
-    let data
-    //const [columns, setColumns] = useState()
-    //const [data, setData] = useState()
+    const {statType: routeStatType} = useParams()
+    const statType = statTypeOverride || routeStatType
 
     const statCategory = useMemo(() => {
     if (!statType) return null;
@@ -43,20 +40,23 @@ const AllTimeLeaders = () => {
     
     return (
       <div>
-      {statType === 'Passing' && <p>**Minimum of 1500 attempts**</p>}
-      {statType === 'Rushing' && <p>**Minimum of 500 carries** **Some historical stats are missing**</p>}
+      {statType === 'Passing' && <p className="all-time-note">Minimum of 1,500 attempts for efficiency records.</p>}
+      {statType === 'Rushing' && <p className="all-time-note">Minimum of 500 carries for efficiency records. Some historical stats are incomplete.</p>}
     <div className="all-time-leaders">
       {Object.keys(statCategory).map((statGroup) => {
         const data = statCategory[statGroup];
         const columns = generateColumns(data);
 
         return (
-            <div key={statGroup} className="stat-section">
-              <h2 className="stat-header">
-                {statGroup.replace(/([A-Z])/g, ' $1').toUpperCase()}
-              </h2>
+            <section key={statGroup} className="stat-section">
+              <div className="all-time-record-heading">
+                <span className="record-eyebrow">Career leaders</span>
+                <h2 className="stat-header">
+                  {statGroup.replace(/([A-Z])/g, ' $1').toUpperCase()}
+                </h2>
+              </div>
               <Table columns={columns} data={data} />
-            </div>
+            </section>
         );
       })}
     </div>

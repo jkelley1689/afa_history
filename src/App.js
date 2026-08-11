@@ -11,10 +11,11 @@ import Seasons from "./Screens/Seasons/Seasons";
 import SeasonCard from "./Screens/SeasonCard/SeasonCard";
 import Stats from "./Screens/Stats/Stats";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AllTimeLeaders from "./Screens/AllTimeLeaders/AllTimeLeaders";
 import TeamCardByYear from "./Screens/TeamCard/TeamCardByYear";
 import CareerStats from "./Screens/Career/CareerStats";
 import CareerSearch from "./Screens/Career/CareerSearch";
+import Records from "./Screens/Records/Records";
+import LegacyAllTimeRedirect from "./Screens/Records/LegacyAllTimeRedirect";
 
 Amplify.configure(config);
 
@@ -32,7 +33,10 @@ function App() {
           <Route path="/Seasons" Component={Seasons} />
           <Route path="/Seasons/:year" Component={SeasonCard} />
           <Route path="/Seasons/:year/:statType" Component={Stats} />
-          <Route path="/All-Time-Leaders/:statType" Component={AllTimeLeaders} />
+          <Route path="/Records" Component={Records} />
+          <Route path="/Records/:recordType" Component={Records} />
+          <Route path="/Records/:recordType/:statType" Component={Records} />
+          <Route path="/All-Time-Leaders/:statType" Component={LegacyAllTimeRedirect} />
           <Route path="/Career/:playerName" Component={CareerStats} />
           <Route path="/CareerSearch" Component={CareerSearch} />
         </Routes>

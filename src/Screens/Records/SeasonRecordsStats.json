@@ -1,0 +1,48 @@
+{
+  "source": "AFA All Time History.xlsx",
+  "groups": [
+    {
+      "id": "passing",
+      "label": "Passing",
+      "sourceTab": "Passing",
+      "qualifier": "Efficiency records require at least 200 passing attempts.",
+      "records": [
+        { "id": "passing-yards", "label": "Most Passing Yards", "name": "Byron Leftwich", "team": "LV08", "year": 2008, "stat": 6181 },
+        { "id": "passing-touchdowns", "label": "Most Passing TDs", "name": "Byron Leftwich", "team": "LV08", "year": 2008, "stat": 53 },
+        { "id": "passing-completions", "label": "Most Completions", "name": "JP Losman", "team": "LV16", "year": 2016, "stat": 394 },
+        { "id": "passing-attempts", "label": "Most Passing Attempts", "name": "Brandon Weeden", "team": "17Prt", "year": 2017, "stat": 674 },
+        { "id": "passing-rating", "label": "Highest QB Rating", "name": "Ken Dorsey", "team": "Sac10", "year": 2010, "stat": 126.8, "decimals": 1 },
+        { "id": "passing-completion-percentage", "label": "Highest Completion %", "name": "Johnny Manziel", "team": "Orl", "year": 2024, "stat": 66.52, "decimals": 2, "suffix": "%" },
+        { "id": "passing-yards-per-attempt", "label": "Highest Yards per Attempt", "name": "Tim Hasselbeck", "team": "SLC08", "year": 2008, "stat": 11.03, "decimals": 2 }
+      ]
+    },
+    {
+      "id": "rushing",
+      "label": "Rushing",
+      "sourceTab": "Rushing",
+      "qualifier": "Yards-per-carry records require at least 100 rushing attempts.",
+      "records": [
+        { "id": "rushing-yards", "label": "Most Rushing Yards", "name": "James Robinson", "team": "Chi", "year": 2022, "stat": 2152 },
+        { "id": "rushing-touchdowns", "label": "Most Rushing TDs", "name": "John Avery", "team": "Lou", "year": 2005, "stat": 27 },
+        { "id": "rushing-attempts", "label": "Most Rushing Attempts", "name": "James Robinson", "team": "Chi", "year": 2022, "stat": 454 },
+        { "id": "rushing-yards-per-carry", "label": "Highest Yards per Carry", "name": "Travis Prentice", "team": "Bir", "year": 2005, "stat": 6.97, "decimals": 2 },
+        { "id": "rushing-broken-tackles", "label": "Most Broken Tackles", "name": "D'Onta Foreman", "team": "Alb", "year": 2022, "stat": 132 },
+        { "id": "rushing-yards-after-first-hit", "label": "Most Yards After First Hit", "name": "James Robinson", "team": "Chi", "year": 2022, "stat": 1286 },
+        { "id": "rushing-twenty-plus", "label": "Most 20+ Yard Runs", "name": "Leonard Fournette", "team": "SLC", "year": 2024, "stat": 16 }
+      ]
+    },
+    {
+      "id": "receiving",
+      "label": "Receiving",
+      "sourceTab": "Receiving",
+      "qualifier": "Yards-per-reception records require at least 50 receptions.",
+      "records": [
+        { "id": "receiving-yards", "label": "Most Receiving Yards", "name": "Devin Thomas", "team": "Frk16", "year": 2016, "stat": 1886 },
+        { "id": "receiving-touchdowns", "label": "Most Receiving TDs", "name": "Jazz Ferguson", "team": "SD", "year": 2024, "stat": 20 },
+        { "id": "receiving-receptions", "label": "Most Receptions", "name": "Victor Cruz", "team": "Sac", "year": 2018, "stat": 127 },
+        { "id": "receiving-yards-per-reception", "label": "Highest Yards per Reception", "name": "Chris Owusu", "team": "Prt15", "year": 2015, "stat": 22.94, "decimals": 2 },
+        { "id": "receiving-yards-after-catch", "label": "Most Yards After Catch", "name": "JJ Arcega-Whiteside", "team": "Hrt", "year": 2024, "stat": 561 }
+      ]
+    }
+  ]
+}

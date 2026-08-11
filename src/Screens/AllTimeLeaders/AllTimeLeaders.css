@@ -1,38 +1,126 @@
 .all-time-leaders {
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 24px 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
 }
 
 .stat-section {
-  flex: 1 1 400px;        /* bumped min-width from 300px to 400px */
-  max-width: 100%;        /* remove the 30% cap — let content dictate width */
-  background-color: #1a1a1a;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  overflow-x: hidden;       /* if a table still overflows, scroll the section not the page */
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  background: rgba(19, 19, 31, 0.92);
+  border: 1px solid #2e2e42;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+}
+
+.all-time-record-heading {
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid #2a2a3e;
 }
 
 .stat-header {
-  margin-bottom: 1rem;
-  color: #f0f0f0;
-  border-bottom: 1px solid #444;
-  padding-bottom: 0.5rem;
+  margin: 3px 0 0;
+  color: #f7f7fb;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.stat-section table {
+.stat-section .table-container {
   width: 100%;
+  max-height: none;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.stat-section .custom-table {
+  width: 100%;
+  min-width: 0;
   table-layout: fixed;
 }
 
-/* Remove or delete the first-child width rule entirely */
-.stat-section td:first-child,
-.stat-section th:first-child {
+.stat-section .custom-table th {
+  padding: 10px 16px;
+  color: #747e9a;
+  background: #11111c;
+  border-bottom: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.stat-section .custom-table th:hover {
+  color: #aeb9f4;
+  background: #161625;
+}
+
+.stat-section .custom-table td {
+  padding: 13px 16px;
+  color: #d5d8e5;
+  background: transparent;
+  border-bottom: 0;
+  border-top: 1px solid #242436;
+  font-size: 0.88rem;
+}
+
+.stat-section .custom-table tbody tr:first-child td {
+  border-top: 0;
+}
+
+.stat-section .custom-table tbody tr:nth-child(even) td {
+  background: rgba(17, 17, 28, 0.34);
+}
+
+.stat-section .custom-table tbody tr:hover td {
+  background: #19192a;
+}
+
+.stat-section .custom-table th:first-child,
+.stat-section .custom-table td:first-child {
+  width: calc(100% - 7.5rem);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.stat-section .custom-table th:last-child,
+.stat-section .custom-table td:last-child {
+  width: 7.5rem;
+  text-align: right;
+}
+
+.stat-section .custom-table td:first-child {
+  color: #f2f3f8;
+  font-weight: 700;
+}
+
+.stat-section .custom-table td:last-child {
+  color: #fff;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 640px) {
+  .all-time-leaders {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+.all-time-note {
+  width: 100%;
+  margin: 1rem 0 0;
+  color: #737c97;
+  font-size: 0.85rem;
+  font-weight: 700;
 }

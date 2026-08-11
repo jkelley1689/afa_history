@@ -1,3 +1,31 @@
+.home-page {
+    min-height: calc(100vh - 77px);
+}
+
+.home-hero {
+    position: relative;
+    display: grid;
+    min-height: calc(100vh - 77px);
+    align-items: end;
+    overflow: hidden;
+    padding: clamp(30px, 7vw, 84px);
+    background: #111827;
+}
+
+.home-hero-media {
+    position: absolute;
+    inset: 0;
+}
+
+.home-hero-media::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        linear-gradient(90deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.38)),
+        linear-gradient(0deg, rgba(15, 23, 42, 0.86), rgba(15, 23, 42, 0.05) 55%);
+}
+
 .homeImgCarousel {
     position: relative;
     width: 100%;
@@ -6,7 +34,7 @@
     overflow: hidden;
     margin: 0 auto;
     border-radius: 8px;
-    border: 0.5px solid #2e2e42;
+    border: 1px solid var(--afa-line, #d8d1c4);
 }
 
 .carouselImage {
@@ -20,6 +48,78 @@
     opacity: 1;
 }
 
+.home-hero .carouselImage {
+    position: static;
+    display: block;
+    min-height: 100%;
+}
+
 .carouselImage.fade-out {
     opacity: 0;
+}
+
+.home-hero-content {
+    position: relative;
+    max-width: 760px;
+    color: #fffaf1;
+}
+
+.home-eyebrow {
+    margin: 0 0 10px;
+    color: #c59a3f !important;
+    font-size: 0.78rem !important;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-hero-content h1 {
+    margin: 0;
+    color: #fffaf1;
+    font-size: clamp(3rem, 8vw, 7.8rem);
+    font-weight: 950;
+    line-height: 0.9;
+}
+
+.home-hero-content p {
+    max-width: 620px;
+    color: rgba(255, 250, 241, 0.84);
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.55;
+}
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 900;
+    padding: 10px 14px;
+}
+
+.home-button.primary {
+    background: var(--afa-red, #a83f39);
+    color: white;
+}
+
+.home-button.secondary {
+    border-color: rgba(255, 250, 241, 0.38);
+    background: rgba(255, 250, 241, 0.12);
+    color: #fffaf1;
+}
+
+@media (max-width: 760px) {
+    .home-hero {
+        min-height: 680px;
+        padding: 28px;
+    }
 }

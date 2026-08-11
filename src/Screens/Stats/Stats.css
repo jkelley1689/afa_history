@@ -1,6 +1,14 @@
 .stats {
-    background-color: #f8f8f8;
-    margin: auto;
-    padding-top: 1rem;
-    width: 100%;
+    width: min(1480px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 38px 0 54px;
+    background: transparent;
+}
+
+.stats h1 {
+    margin: 18px auto 14px;
+    color: var(--afa-navy, #17253f);
+    font-size: clamp(2rem, 5vw, 4.4rem);
+    font-weight: 950;
+    line-height: 0.95;
 }

@@ -1,0 +1,18 @@
+.season-navbar,
+.season-nav,
+.season-nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 18px;
+}
+
+.season-navbar a,
+.season-nav a,
+.season-nav-bar a,
+.dropdown a,
+.dropdown button,
+.btn {
+    border-radius: 8px !important;
+    font-weight: 800 !important;
+}

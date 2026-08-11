@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Home.css'
 import slcH5 from '../../Images/SLC_High5.png'
 import chi_jump from '../../Images/CHI_Jump_catch.png'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -18,15 +19,22 @@ const Home = () => {
     return () => clearInterval(interval)
   },[homeImages.length])
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '90px 20px'}}>
-      <div className='title' style={{textAlign: 'center', marginBottom: '10px'}}>
-        <h1>Welcome to the AFA History Page! </h1> 
-        <p style={{fontSize: '1.2rem', color: '#555'}}>It's not just real it's SURREAL</p>
-      </div>
-      <div className="homeImgCarousel">
-        <img src={homeImages[currentImage]} alt="carousel" className="carouselImage" />
-      </div>
-    </div>
+    <main className='home-page'>
+      <section className='home-hero'>
+        <div className='home-hero-media'>
+          <img src={homeImages[currentImage]} alt="AFA game highlight" className="carouselImage" />
+        </div>
+        <div className='home-hero-content'>
+          <p className='home-eyebrow'>AFA League Archive</p>
+          <h1>AFA History</h1>
+          <p>It's not just real. It's surreal.</p>
+          <div className='home-actions'>
+            <Link className='home-button primary' to='/Seasons'>Seasons</Link>
+            <Link className='home-button secondary' to='/CareerSearch'>Player Search</Link>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
 

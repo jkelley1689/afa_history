@@ -42,7 +42,7 @@ const DefaultColumnFilter = ({ column: { filterValue, setFilter } }) => {
   return (
     <div className="filter-container" ref={filterRef}>
       <button onClick={handleFilterIconClick} className="filter-icon">
-        🔍
+        Find
       </button>
       {isFilterOpen && (
         <input
@@ -95,8 +95,8 @@ const Table = ({ columns, data, path, showFilters = false, showFooter = false })
                   <span>
                     {column.isSorted
                       ? column.isSortedDesc
-                        ? ' 🔽'
-                        : ' 🔼'
+                        ? ' v'
+                        : ' ^'
                       : ''}
                   </span>
                   <div>{column.canFilter && showFilters ? column.render('Filter') : null}</div>
@@ -152,3 +152,4 @@ const Table = ({ columns, data, path, showFilters = false, showFooter = false })
 };
 
 export default Table;
+
