@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import './CreatePlayerForm.css'
 import createNewPlayer from '../../Components/apiFunctions/createNewPlayer'
+import { getTeamsForYear } from '../../data/teams'
 
 const CreatePlayerForm = () => {
 
     const allPositions = ['QB','TB','WR','FB','TE-Rec','TE-Block','RT','RG','C','LG','LT','RDE','DT','LDE','ROLB','ILB','LOLB','CB','FS','SS']
-    const teams = ['WSH','ALB','TUL','PRT','BIR','BRC','SLC','SD','CHI','CLM','SJ','ORL','DET','HRT','NY','FRK','SRC','LON','SA','STL','HAW','LOU','DUB','MEM']
     const positionFields = {
         PASSING: [
             {name: 'YDS', label: "Passing Yards", type: "number"},
@@ -93,7 +93,7 @@ const CreatePlayerForm = () => {
 
     const handleChange = (e) => {
         const {name, value} = e.target
-        setPlayerData((prev) => ({ ...prev, [name]: value}))
+        setPlayerData((prev) => ({ ...prev, [name]: value, ...(name === 'YEAR' ? { TEAM: '' } : {})}))
     }
 
     const handleSubmit = async (e) => {
@@ -147,20 +147,20 @@ const CreatePlayerForm = () => {
                 type="number"
                 name="YEAR"
                 placeholder="Year"
-                value={playerData.year}
+                value={playerData.YEAR ?? ''}
                 onChange={handleChange}
                 required
               />
               <select
-                name="team"
-                value={playerData.team}
+                name="TEAM"
+                value={playerData.TEAM}
                 onChange={handleChange}
                 required
               >
                 <option value="">Select Team</option>
-                {teams.map((team) => (
-                    <option key={team} value={team}>
-                        {team}
+                {getTeamsForYear(playerData.YEAR || 2025).map((team) => (
+                    <option key={team.value} value={team.value}>
+                        {team.label}
                     </option>
                 ))}
               </select>

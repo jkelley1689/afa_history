@@ -3,6 +3,7 @@ import standings_21 from '../SeasonComponents/Standings/2021_Standings';
 import standings_22 from '../SeasonComponents/Standings/2022_Standings';
 import standings_23 from '../SeasonComponents/Standings/2023_Standings';
 import standings_24 from '../SeasonComponents/Standings/2024_Standings';
+import standings_25 from './Standings/2025_Standings';
 import StandingsTable from './StandingsTable/StandingsTable';
 
 const standingsByYear = {
@@ -10,6 +11,7 @@ const standingsByYear = {
   2022: { type: 'json', data: standings_22 },
   2023: { type: 'json', data: standings_23 },
   2024: { type: 'json', data: standings_24 },
+  2025: { type: 'json', data: standings_25 },
 };
 
 const SeasonStandings = ({ year }) => {
@@ -21,7 +23,7 @@ const SeasonStandings = ({ year }) => {
     return <img src={standings.data} alt={`Standings for ${year}`} />;
   }
 
-  return <StandingsTable data={standings.data} />;
+  return <StandingsTable data={standings.data} conferenceOnly={Number(year) === 2025} />;
 };
 
 export default SeasonStandings;

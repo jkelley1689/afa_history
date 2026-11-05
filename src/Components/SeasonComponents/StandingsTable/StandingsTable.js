@@ -1,17 +1,20 @@
 import React from 'react';
 import './StandingsTable.css';
 
-const StandingsTable = ({ data }) => {
+const StandingsTable = ({ data, conferenceOnly = false }) => {
   return (
     <div className="standings-wrapper">
       {data.map(conference => {
-        const totalRows = conference.divisions.reduce(
+        const groups = conferenceOnly
+          ? [{ division: conference.conference, teams: conference.divisions.flatMap(division => division.teams) }]
+          : conference.divisions;
+        const totalRows = groups.reduce(
           (sum, div) => sum + div.teams.length + 2, 0
         );
 
         const rows = [];
 
-        conference.divisions.forEach((division, divIndex) => {
+        groups.forEach((division, divIndex) => {
           // Division title row
           rows.push(
             <tr key={`${division.division}-title`} className="division-header-row">
@@ -20,8 +23,8 @@ const StandingsTable = ({ data }) => {
                   <span>{conference.conference}</span>
                 </td>
               )}
-              <td colSpan={11} className={`division-title-cell ${conference.conference.toLowerCase()}`}>
-                {division.division} Division
+              <td colSpan={conferenceOnly ? 10 : 11} className={`division-title-cell ${conference.conference.toLowerCase()}`}>
+                {division.division} {conferenceOnly ? 'Conference' : 'Division'}
               </td>
             </tr>
           );
@@ -39,7 +42,7 @@ const StandingsTable = ({ data }) => {
               <th>Home</th>
               <th>Away</th>
               <th>Conf</th>
-              <th>Div</th>
+              {!conferenceOnly && <th>Div</th>}
             </tr>
           );
 
@@ -57,14 +60,14 @@ const StandingsTable = ({ data }) => {
                 <td>{team.home}</td>
                 <td>{team.away}</td>
                 <td>{team.conf}</td>
-                <td>{team.div}</td>
+                {!conferenceOnly && <td>{team.div}</td>}
               </tr>
             );
           });
         });
 
         return (
-          <table key={conference.conference} className="standings-table">
+          <table key={conference.conference} className="standings-table" aria-label={`${conference.conference} Conference standings`}>
             <tbody>{rows}</tbody>
           </table>
         );

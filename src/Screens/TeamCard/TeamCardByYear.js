@@ -2,11 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import usePlayers from '../../Components/apiFunctions/usePlayers';
 import { qbColumns, rbColumns, wrColumns, blockingColumns, defensiveColumns } from '../../Components/SVComponents/PlayerContent';
-import { teams } from '../Teams/Teams';
+import { getTeamForYear } from '../../data/teams';
 import Table from '../../Components/SVComponents/Table';
 import SeasonNavBar from '../../Components/SeasonNavBar/SeasonNavBar';
 import LoadingScreen from '../Loading/LoadingScreen';
-import gmHistory from './gmHistory.json';
+import { getTeamHistory } from './teamHistory';
 import './TeamCard.css';
 
 const POSITION_GROUPS = [
@@ -49,11 +49,13 @@ const POSITION_GROUPS = [
 
 const TeamCardByYear = () => {
 
-  const { team, year } = useParams(); // route: /Teams/:team/:year
-  const teamAbv = teams.find(t => t.label === team)?.value ?? team;
+  const { team: routeTeam, year } = useParams(); // route: /Teams/:team/:year
+  const identity = getTeamForYear(routeTeam, year);
+  const team = identity?.label ?? routeTeam;
+  const teamAbv = identity?.value ?? team;
   const { players, loading, error } = usePlayers({ year, team: teamAbv });
   const yearNumber = Number(year);
-  const yearGm = (gmHistory[team] || []).find(gm =>
+  const yearGm = getTeamHistory(team).find(gm =>
     gm.years.some(gmYear => gmYear.year === yearNumber)
   );
   const yearRecord = yearGm?.years.find(gmYear => gmYear.year === yearNumber)?.record;
@@ -66,6 +68,7 @@ const TeamCardByYear = () => {
       <SeasonNavBar
         year={year}
         title={team}
+        team={team}
         basePath={`/Teams/${team}`}
         showOffensiveStats={false}
         showDefensiveStats={false}

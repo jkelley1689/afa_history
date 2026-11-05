@@ -54,6 +54,20 @@ const results = [
         PassingLeader: "Sam Hartman (Memphis)",
         RushingLeader: "Leonard Fournette (SLC)",
         RecLeader: "Kevin White (Orlando)"
+    },
+    {
+        season: 2025,
+        champion: "Hawaii Sharks",
+        OPOY: "Jake Weineke (Chicago)",
+        DPOY: "Jared Ivey (San Antonio)",
+        ROTY: "Jared Ivey (San Antonio)",
+        GMOY: "Eddie Ohanian (London) & Dan Plombon (Hawaii)",
+        CBPOY: "Dane Jackson (San Jose)",
+        SGA: "AJ McCarron (Sacramento)",
+        ABMVP: "Josh Kelley (Hawaii)",
+        PassingLeader: "Sam Hartman (Memphis)",
+        RushingLeader: "Gus Edwards (Hartford)",
+        RecLeader: "Jake Weineke (Chicago)"
     }
 ]
 export default results

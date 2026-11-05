@@ -12,7 +12,7 @@ const SeasonCard = () => {
     const {year} = useParams()
     const selectedYear = seasonResults.filter(item => item.season === Number(year))
 
-    if(selectedYear.length === 0){
+    if(selectedYear.length === 0 && Number(year) !== 2025){
       return <div style={{padding: 300}}>Stats not yet stored for this year</div>
     }
   return (

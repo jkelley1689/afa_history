@@ -8,7 +8,8 @@ const SeasonAwards = ({selectedYearResults, year}) => {
   return (
     <div className='awards'>
         <div className='awards-container'>
-            <h2>{selectedYearResults.season} AFA Standings and Awards</h2>
+            <h2>{year} AFA Standings and Awards</h2>
+            {selectedYearResults ? (
             <div className='awards-list'>
                 <div className='award-item'>
                     <span className='award-label'>American Bowl Champion: </span>
@@ -55,6 +56,7 @@ const SeasonAwards = ({selectedYearResults, year}) => {
                     <span className='award-value'>{selectedYearResults.RecLeader}</span>
                 </div>
             </div>
+            ) : <p>Awards not yet available for this year.</p>}
             <SeasonStandings year={year} />
         </div>
     </div>
