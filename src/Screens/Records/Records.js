@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Navigate, useParams } from 'react-router-dom';
 import AllTimeLeaders from '../AllTimeLeaders/AllTimeLeaders';
 import SeasonRecordsView from './SeasonRecordsView';
+import DefensiveRecordsView from './DefensiveRecordsView';
 import './Records.css';
 
 const statTypes = ['Passing', 'Rushing', 'Receiving', 'Defensive'];
@@ -52,13 +53,14 @@ const Records = () => {
                   to={`/Records/All-Time/${type}`}
                   className={({ isActive }) => `record-category-tab ${isActive ? 'record-category-tab--active' : ''}`}
                 >
-                  {type}
+                  {type === 'Defensive' ? 'Defensive Players' : type}
                 </NavLink>
               ))}
             </nav>
-            <AllTimeLeaders statType={activeStatType} />
+            {activeStatType !== 'Defensive' && <AllTimeLeaders statType={activeStatType} />}
           </>
         ) : <SeasonRecordsView />}
+        {(!isAllTime || activeStatType === 'Defensive') && <DefensiveRecordsView isAllTime={isAllTime} />}
       </div>
     </main>
   );

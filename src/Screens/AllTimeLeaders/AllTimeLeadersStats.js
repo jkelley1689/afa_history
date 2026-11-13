@@ -681,6 +681,10 @@ const allTimeStats = {
             {
                 "player": "Kenny Bell",
                 "YPC": 16.5
+            },
+            {
+                "player": "DaRick Rodgers",
+                "YPC": 16.4
             }
 
         ],

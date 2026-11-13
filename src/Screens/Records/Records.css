@@ -124,6 +124,26 @@
   letter-spacing: -0.02em;
 }
 
+.defensive-records {
+  margin-top: 24px;
+}
+
+.defensive-coverage {
+  color: #b7c2fc;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.defensive-records-message {
+  margin: 0;
+  padding: 12px 22px;
+  color: #a0a8c0;
+}
+
+.defensive-records .defensive-career-leaders {
+  padding: 16px;
+}
+
 .position-list {
   color: #737c97;
   font-size: 0.75rem;
